@@ -7,9 +7,6 @@ from question_loader import load_questions
 from speech import speak
 from sound_effects import play_correct_sound, play_wrong_sound
 from result_logger import log_result
-from generate_html import generate_html
-
-
 
 pygame.init()
 pygame.mixer.init()
@@ -107,10 +104,9 @@ def main():
     accuracy = round(correct / 15 * 100, 1)
     log_result(accuracy, total_time)
     show_result_screen(accuracy, total_time)
-    generate_html("/home/s1310064/Typing-game/results.csv", "/home/s1310064/Typing-game/docs/index.html")
-    subprocess.run(["git", "add", "/home/s1310064/Typing-game/docs/index.html"])
-    subprocess.run(["git", "commit", "-m", "Update ranking automatically"])
-    subprocess.run(["git", "push"])
+    #subprocess.run(["git", "add", "/home/s1310064/Typing-game/docs/index.html"])
+    #subprocess.run(["git", "commit", "-m", "Update ranking automatically"])
+    #subprocess.run(["git", "push"])
 
     pygame.quit()
 
