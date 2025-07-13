@@ -22,7 +22,7 @@ WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Typing Game")
 
-font_path = "/home/s1310064/ex7_4/data/NotoSansJP-VariableFont_wght.ttf"
+font_path = "/home/s1310064/Typing-game/data/NotoSansJP-VariableFont_wght.ttf"
 font = pygame.font.Font(font_path, 36)
 # font = pygame.font.SysFont("Arial", 36)
 
@@ -107,8 +107,8 @@ def main():
     accuracy = round(correct / 15 * 100, 1)
     log_result(accuracy, total_time)
     show_result_screen(accuracy, total_time)
-    generate_html()
-    subprocess.run(["git", "add", "docs/index.html"])
+    generate_html("/home/s1310064/Typing-game/results.csv", "/home/s1310064/Typing-game/docs/index.html")
+    subprocess.run(["git", "add", "/home/s1310064/Typing-game/docs/index.html"])
     subprocess.run(["git", "commit", "-m", "Update ranking automatically"])
     subprocess.run(["git", "push"])
 

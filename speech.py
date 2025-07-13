@@ -13,7 +13,7 @@ import subprocess
 import os
 
 def speak(word):
-    filepath = f"/home/s1310064/ex7_4/voice/{word}.wav"
+    filepath = f"/home/s1310064/Typing-game/voice/{word}.wav"
     if not os.path.exists(filepath):
         print(f"[警告] 音声ファイルが存在しません: {filepath}")
         return
